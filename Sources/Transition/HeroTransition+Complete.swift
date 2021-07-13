@@ -85,12 +85,6 @@ extension HeroTransition {
         transitionContainer?.addSubview(finished ? fromView : toView)
       }
       transitionContainer?.addSubview(finished ? toView : fromView)
-
-      if isPresenting != finished, !inContainerController, transitionContext != nil {
-        // only happens when present a .overFullScreen VC
-        // bug: http://openradar.appspot.com/radar?id=5320103646199808
-        container.window?.addSubview(isPresenting ? fromView : toView)
-      }
     }
 
     if container.superview == transitionContainer {
